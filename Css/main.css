@@ -75,22 +75,4 @@ body {
   line-height: 24px;
 }
 
-@media (min-width: 720px) {
-  /* smartphones, Android phones, landscape iPhone */
-  .crud h1::after {
-    content: "";
-    background-color: rgb(255, 194, 97);
-    z-index: -1;
-    width: 275px;
-    height: 20%;
-    position: absolute;
-    left: 0;
-    bottom: 45px;
-    transition: all 0.6s;
-  }
-  .popup {
-    position: absolute;
-    left: 0;
-    bottom: 10%;
-  }
-}
+
