@@ -75,7 +75,7 @@ body {
   line-height: 24px;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 720px) {
   /* smartphones, Android phones, landscape iPhone */
   .crud h1::after {
     content: "";
