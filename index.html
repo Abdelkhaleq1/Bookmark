@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    <link rel="stylesheet" href="Css/main.css">
+
+
+</head>
+<body >
+    
+<div class="container" >
+  <div class="col-12  mt-4  w-100 m-auto">
+    <div class="text-center crud">
+       <h1 class=" pb-5 mb-5" >Bookmarker</h1> 
+    <h2> 
+      <i class="fa-solid fa-bookmark"></i>
+      Bookmark your favorite sites
+      
+      <i class="fa-solid fa-bookmark"></i> 
+    </h2>
+    </div>
+   
+    
+    <div class="mb-3">
+      <label for="siteName" class="form-label fw-bolder "><i class="fa-solid fa-book-bookmark pe-2"></i>Site Name</label>
+      <input oninput="validation(this)" type="text" class="form-control" id="siteName" placeholder="Bookmark Name ">
+    </div>
+    
+    <div class="mb-3">
+      <label for="siteUrl" class="form-label fw-bolder"> <i class="fa-solid fa-link pe-2"></i>Site Url    </label>
+      <input oninput="validation(this)" type="url" class="form-control" id="siteUrl" placeholder="Wibesite Url">
+    </div>
+  
+    <div class="d-flex align-content-center justify-content-center sub-b">
+        <button onclick="addBook()" type="button" class="btn btn-danger  p-2 m-3">Submit</button>
+    </div>
+   
+  </div>
+  <div class="col-12 mt-5 bg-light crud w-100 m-auto text-center">
+    <table class="table">
+         <thead class=" fw-bold">
+        <tr>
+            <td>Index	</td>
+            <td>Website Name</td>
+            <td>Visit</td>
+            <td>Delete</td>
+        </tr>
+       
+    </thead>
+    <tbody id="displayData" class=" fs-5 fw-medium">
+    </tbody>
+    </table>
+   
+
+</div>
+</div>
+
+<div  class="layer position-absolute d-none" id="popup">
+  <div class=" card w-25 m-auto p-3 popup">
+    <div class="d-flex justify-content-between align-items-center p-3">
+      <div class="circles d-flex" >
+    <span class="rounded-circle me-2 bg-danger">  </span>
+    <span class="rounded-circle me-2 bg-secondary"></span>
+    <span class="rounded-circle me-2 bg-info"></span>
+  </div>
+  <button onclick="closeBtn()" class="btn border-0  pt-0 mt-0" id="closeBtn">
+    <i class="fa-solid fa-xmark close fs-3"></i>
+  </button>
+  
+    </div>
+  
+
+    <p class="fw-bolder fs-5"> Site Name or Url is not valid, Please follow the rules below :</p>
+    <p class="fw-medium"> <i class="fa-regular fa-circle-right p-2 arrow"></i> Site name must contain at least 3 characters</p>
+    <p class="fw-medium"> <i class="fa-regular fa-circle-right p-2 arrow"></i> Site URL must be a valid one like [https://abc.com]</p>
+</div>
+
+</div>
+
+
+
+    <script src="https://kit.fontawesome.com/650483a6d4.js" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
