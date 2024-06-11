@@ -1,106 +1,22 @@
-var siteName= document.getElementById("siteName");
-var siteUrl= document.getElementById("siteUrl");
-var popup= document.getElementById("popup");
+function quoteGen(){
+    var Quote=[
+        "Be yourself; everyone else is already taken." , 
+        "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best",
+        "So many books, so little time.",
+        "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+        "A room without books is like a body without a soul.",
+        "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.",
+        "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
+        "You only live once, but if you do it right, once is enough.",
+        "Be the change that you wish to see in the world."
+    ]
+    var names= ["Oscar Wilde" , "Marilyn Monroe " , "Frank Zappa" , "Albert Einstein" , "Marcus Tullius Cicero" , "Bernard M. Baruch" , " Dr. Seuss" , " Mae West" , " Mahatma Gandhi"]
 
-var bookList=[];
+   var result = Math.floor(Math.random() * Quote.length);
 
-if (localStorage.getItem("Bcontainer")!== null){
-
-    bookList= JSON.parse(localStorage.getItem("Bcontainer"));
-    displayBooks();
-}
-
-
-
-
-
-
-function addBook(){
-
-  if(validation(siteName)== true && validation(siteUrl)== true )
-    {
-      book={
-        name:siteName.value,
-        url:siteUrl.value,
-      }
-      bookList.push(book);
-    
-      localStorage.setItem("Bcontainer" , JSON.stringify(bookList));
-      displayBooks();
-      clearForm()
-      console.log(bookList)
-    }
-    else(
-      popup.classList.remove("d-none")
-    )
-}
-
-
-
-
-
-function clearForm(){
-
-siteName.value=null;
-siteUrl.value=null;
-siteName.classList.remove("is-valid");
-siteUrl.classList.remove("is-valid")
-
-}
-
-function displayBooks(){
-
-    var bookInfo="";
-
-    for (var i = 0; i< bookList.length; i++) {
-        
-        bookInfo+=`
-         <tr>
-            <td>${i}</td>
-            <td>${bookList[i].name}</td>
-            <td><a href="${bookList[i].url}" target="_blank" class="btn visit-btn " role="button" > <i class="fa-regular fa-eye"></i> Visit</a>
-            </td>
-            <td>
-            <button onclick="deleteProduct(${i})" type="button" class="btn btn-danger p-2"> <i class="fa-solid fa-trash"></i> Delete</button></td>
-
-
-
-           </tr>
-        `
-        console.log(bookInfo)
-
-    }
-    document.getElementById("displayData").innerHTML=bookInfo;
-}
-
-function deleteProduct(id){
-bookList.splice(id , 1);
-localStorage.setItem("Bcontainer" , JSON.stringify(bookList));
-displayBooks();
-console.log(bookList);
-}
-
-
-function validation(element){
-var text = element.value;
-regex={
-  siteName:/^[A-Za-z]{3,}$/,
-  siteUrl:/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
-};
-if (regex[element.id].test(text) == true){
-
-  element.classList.add("is-valid")
-  element.classList.remove("is-invalid")
-  return true;
-
-} 
-else{
-  element.classList.add("is-invalid")
-  element.classList.remove("is-valid")
-  return false;
-}
-}
-function closeBtn(){
-  popup.classList.add("d-none")
-
+    console.log(result)
+    document.getElementById("quoteGenerate").innerHTML=`
+   <p>${Quote[result]}</p>
+   <P class="fw-bolder">${names[result]}</P>`;
+ 
 }

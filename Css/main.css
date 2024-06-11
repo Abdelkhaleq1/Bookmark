@@ -1,78 +1,12 @@
-body {
-  background-color: #f7eddf;
+.q h1{
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-weight: 700;
+font-size: 80px;
+margin-bottom: 40px;
 }
-.crud h1 {
-  font-family: "Pacifico", cursive;
-  font-size: 50px;
-  font-weight: 500;
-  line-height: 60px;
-  border-bottom: #000 2px dotted;
-  color: rgb(53, 46, 40);
-  position: relative;
+.q p{
+font-family: 'Times New Roman', Times, serif;
+font-weight: 400;
+font-size: 35px;
+margin-bottom: 25px;
 }
-.crud h1::after {
-  content: "";
-  background-color: rgb(255, 194, 97);
-  z-index: -1;
-  width: 275px;
-  height: 20%;
-  position: absolute;
-  left: 41%;
-  bottom: 45px;
-  transition: all 0.6s;
-}
-.crud h1:hover::after {
-  height: 40%;
-}
-.crud h2 {
-  font-family: "Righteous", sans-serif;
-  font-size: 26px;
-  font-weight: 500;
-  line-height: 30px;
-  padding-bottom: 50px;
-  background-image: linear-gradient(to right, #3ca55c, #b5ac49);
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-.sub-b button {
-  background-color: #d1512e;
-  width: fit-content;
-}
-
-.visit-btn {
-  color: aliceblue;
-  background-color: #9fb33b;
-  width: fit-content;
-}
-.dbtn {
-  width: fit-content;
-}
-.arrow {
-  color: #d1512e;
-}
-.circles span {
-  display: block;
-  width: 20px;
-  height: 20px;
-}
-.layer {
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.popup {
-  position: absolute;
-  left: 36%;
-  bottom: 40%;
-}
-.th {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-}
-
-
